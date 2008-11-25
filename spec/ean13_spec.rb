@@ -38,4 +38,16 @@ describe "The EAN13 class" do
     EAN13.new("9781843549161").to_gtin.should eql("09781843549161")
     EAN13.new("0632737715836").to_gtin.should eql("00632737715836")
   end
+
+  it "should recognise the presence of an embedded SAN" do
+    EAN13.new("0799999013725").san?.should be_true
+    EAN13.new("5030670159260").san?.should be_true
+    EAN13.new("0632737715836").san?.should be_false
+  end
+
+  it "should convert to a SAN correctly" do
+    EAN13.new("0799999013725").to_san.should eql("9013725")
+    EAN13.new("5030670159260").to_san.should eql("0159263")
+    EAN13.new("0632737715836").to_san.should be_nil
+  end
 end

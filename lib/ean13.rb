@@ -1,8 +1,11 @@
+require 'rubygems'
+require 'san'
+
 class EAN13
 
   class Version #:nodoc:
     Major = 1
-    Minor = 0
+    Minor = 1
     Tiny  = 0
 
     String = [Major, Minor, Tiny].join('.')
@@ -42,6 +45,30 @@ class EAN13
     end
 
     twelve + check.to_s
+  end
+
+  # Returns true if this EAN has an embedded SAN
+  #
+  # For more info on SANs, see 
+  # http://www.bowker.com/index.php/component/content/article/3
+  #
+  def san?
+    return nil unless valid?
+
+    prefix = @number.to_s[0,6]
+    if prefix == "079999" || prefix == "503067"
+      true
+    else
+      false
+    end
+  end
+
+  # convert this EAN to a SAN. returns nil if the EAN doesn't contain
+  # an embedded SAN.
+  #
+  def to_san
+    return nil unless san?
+    SAN.complete(@number[6,6])
   end
 
   def to_gtin

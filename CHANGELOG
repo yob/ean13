@@ -1,2 +1,5 @@
+v1.1 (25th November 2008)
+- Add support for detecting and extracting embedded SANs
+
 v1.0 (22nd October 2008)
 - Initial Release
