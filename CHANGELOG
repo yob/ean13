@@ -1,3 +1,6 @@
+v1.2 (25th February 2009)
+- Make SAN an optional dependency
+
 v1.1 (25th November 2008)
 - Add support for detecting and extracting embedded SANs
 

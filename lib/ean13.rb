@@ -1,11 +1,10 @@
 require 'rubygems'
-require 'san'
 
 class EAN13
 
   class Version #:nodoc:
     Major = 1
-    Minor = 1
+    Minor = 2
     Tiny  = 0
 
     String = [Major, Minor, Tiny].join('.')
@@ -66,7 +65,18 @@ class EAN13
   # convert this EAN to a SAN. returns nil if the EAN doesn't contain
   # an embedded SAN.
   #
+  # requires the SAN library to be loaded or available. Will raise an
+  # error if it's not
+  #
   def to_san
+    unless Kernel.const_defined?("SAN")
+      begin
+        gem 'san'
+        require 'san'
+      rescue Exception => e
+        raise LoadError, "Could not load require SAN library. Try installing the san rubygem."
+      end
+    end
     return nil unless san?
     SAN.complete(@number[6,6])
   end

@@ -46,8 +46,17 @@ describe "The EAN13 class" do
   end
 
   it "should convert to a SAN correctly" do
-    EAN13.new("0799999013725").to_san.should eql("9013725")
-    EAN13.new("5030670159260").to_san.should eql("0159263")
-    EAN13.new("0632737715836").to_san.should be_nil
+
+    begin
+      require 'san'
+    rescue LoadError
+      warn "WARNING: can't test EAN13#to_san, san library not available"
+    end
+
+    if Kernel.const_defined?("SAN")
+      EAN13.new("0799999013725").to_san.should eql("9013725")
+      EAN13.new("5030670159260").to_san.should eql("0159263")
+      EAN13.new("0632737715836").to_san.should be_nil
+    end
   end
 end
