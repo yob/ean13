@@ -4,7 +4,7 @@ class EAN13
 
   class Version #:nodoc:
     Major = 1
-    Minor = 2
+    Minor = 3
     Tiny  = 0
 
     String = [Major, Minor, Tiny].join('.')
@@ -16,6 +16,10 @@ class EAN13
 
   def valid?
     EAN13.valid? @number
+  end
+
+  def bookland?
+    valid? && (@number[0,3] == "978" || @number[0,3] == "979")
   end
 
   def self.valid?(ean)
