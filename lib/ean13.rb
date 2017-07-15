@@ -56,7 +56,7 @@ class EAN13
   # http://www.bowker.com/index.php/component/content/article/3
   #
   def san?
-    $stderr.puts "EAN13.san? was removed in EAN13 v2.0"
+    $stderr.puts "EAN13.san? was removed in ean13 v2.0"
   end
 
   # convert this EAN to a SAN. returns nil if the EAN doesn't contain
@@ -66,7 +66,7 @@ class EAN13
   # error if it's not
   #
   def to_san
-    $stderr.puts "EAN13.to_san"
+    $stderr.puts "EAN13.to_san was removed in ean13 v2.0"
   end
 
   def to_gtin
