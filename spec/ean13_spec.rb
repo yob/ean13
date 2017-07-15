@@ -1,6 +1,3 @@
-$LOAD_PATH << File.dirname(__FILE__) + "/../lib"
-
-require 'spec'
 require 'ean13'
 
 describe "The EAN13 class" do
