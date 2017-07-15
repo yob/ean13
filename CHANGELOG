@@ -1,3 +1,6 @@
+v2.0.1 (15th July 2017)
+- Avoid requiring rubygems
+
 v2.0 (15th July 2017)
 - Remove methods for converting to SANs
 
