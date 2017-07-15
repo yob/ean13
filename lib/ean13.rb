@@ -56,14 +56,7 @@ class EAN13
   # http://www.bowker.com/index.php/component/content/article/3
   #
   def san?
-    return nil unless valid?
-
-    prefix = @number.to_s[0,6]
-    if prefix == "079999" || prefix == "503067"
-      true
-    else
-      false
-    end
+    $stderr.puts "EAN13.san? was removed in EAN13 v2.0"
   end
 
   # convert this EAN to a SAN. returns nil if the EAN doesn't contain
@@ -73,16 +66,7 @@ class EAN13
   # error if it's not
   #
   def to_san
-    unless Kernel.const_defined?("SAN")
-      begin
-        gem 'san'
-        require 'san'
-      rescue Exception => e
-        raise LoadError, "Could not load require SAN library. Try installing the san rubygem."
-      end
-    end
-    return nil unless san?
-    SAN.complete(@number[6,6])
+    $stderr.puts "EAN13.to_san"
   end
 
   def to_gtin
