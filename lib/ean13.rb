@@ -1,5 +1,3 @@
-require 'rubygems'
-
 class EAN13
 
   class Version #:nodoc:
