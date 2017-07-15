@@ -31,5 +31,5 @@ on many products sold around the world.
 
 # Contributing
 
-Source code is publicly available @ http://github.com/yob/ean13.Patches
+Source code is publicly available @ http://github.com/yob/ean13. Patches
 welcome, preferably via a git repo I can pull from.
