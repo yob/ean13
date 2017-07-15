@@ -3,8 +3,8 @@ require 'rubygems'
 class EAN13
 
   class Version #:nodoc:
-    Major = 1
-    Minor = 3
+    Major = 2
+    Minor = 0
     Tiny  = 0
 
     String = [Major, Minor, Tiny].join('.')
