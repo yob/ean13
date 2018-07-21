@@ -5,7 +5,7 @@ class EAN13
   class Version #:nodoc:
     Major = 2
     Minor = 0
-    Tiny  = 1
+    Tiny  = 2
 
     String = [Major, Minor, Tiny].join('.')
   end

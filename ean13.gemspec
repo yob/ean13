@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name = "ean13"
-  spec.version = "2.0.1"
+  spec.version = "2.0.2"
   spec.summary = "a (very) small library for working with EAN-13 codes"
   spec.description = "a (very) small library for working with EAN-13 codes"
   spec.license = "MIT"
