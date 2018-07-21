@@ -7,7 +7,6 @@ Gem::Specification.new do |spec|
   spec.author = "James Healy"
   spec.email = "jimmy@deefa.com"
   spec.homepage = "http://github.com/yob/ean13"
-  spec.has_rdoc = true
   spec.rdoc_options << "--title" << "EAN-13" << "--line-numbers"
 
   spec.required_ruby_version = ">=1.9.3"
